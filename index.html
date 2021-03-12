@@ -9,11 +9,10 @@
       <h1 id="temperature"></h1>
       <p>
         <button id="temperature-up">+</button>
-        <button id="temperature-down">-</button>
-        <button id ="temperature-reset">reset</button>
-        power saving mode is <span id="power-saving-status"></span>
-        <button id="powersaving-on">PSM on</button>
-        <button id="powersaving-off">PSM off</button>
+        <button id="temperature-down">-</button><br>
+        <button id ="temperature-reset">reset</button><br>
+        power saving mode is <span id="powerSave"></span><br>
+        <button id="togglePowerSave">PSM on/off</button>
       </p>
     </section>
     <script src="jquery-3.0.0.js"></script>
@@ -34,21 +33,18 @@
         thermostat.reset();
         updateTemperature();
       })
-      $('#powersaving-on').on('click', function() {
+      $('#togglePowerSave').on('click', function() {
         thermostat.togglePowerSave();
+        thermostat.powerSavingMode == true ?
+        $('#powerSave').text('on') :
+        $('#powerSave').text('off')
         updateTemperature();
-      })
-
-      $('#powersaving-off').on('click', function() {
-        thermostat.togglePowerSave();
-        updateTemperature();
-
       })
       function updateTemperature() {
         $('#temperature').text(thermostat.temperature);
         $('#temperature').attr('class', thermostat.energyUsage());
       }
-  })
+    })
       </script>
       <script src='src/thermostat.js'></script>
   </body>
