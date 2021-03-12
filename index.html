@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="css/styles.css"
   </head>
   <body>
-    <img src="img/jazzy_scene.jpg" alt="">
+    <div class="container">
     <section>
       <h1 id="temperature"></h1>
       <p>
@@ -25,14 +25,18 @@
         $('#temperature-up').on('click', function(){
           thermostat.up();
           updateTemperature();
+          changeBackgroundImage();
       })
       $('#temperature-down').on('click', function(){
         thermostat.down();
         updateTemperature();
+        changeBackgroundImage();
       })
       $('#temperature-reset').on('click', function() {
         thermostat.reset();
         updateTemperature();
+        changeBackgroundImage();
+
       })
       $('#togglePowerSave').on('click', function() {
         thermostat.togglePowerSave();
@@ -40,13 +44,22 @@
         $('#powerSave').text('on') :
         $('#powerSave').text('off')
         updateTemperature();
+        changeBackgroundImage();
       })
       function updateTemperature() {
         $('#temperature').text(thermostat.temperature);
         $('#temperature').attr('class', thermostat.energyUsage());
       }
-    })
+      function changeBackgroundImage() {
+      if (thermostat.temperature < 18) {
+         $("body").css("background-image", "url('css/img/winter_scene.jpg')");
+      } else {
+        $("body").css('background-image', " url('css/img/jazzy_scene.jpg')");
+      }
+     }
+     })
       </script>
       <script src='src/thermostat.js'></script>
+      </div>
   </body>
 </html>

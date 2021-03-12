@@ -13,7 +13,8 @@ img {
 }
 
 body {
-  background: url(img/jazzy_scene.jpg) no-repeat center fixed;
+  background-image: url("img/jazzy_scene.jpg");
+  background-repeat: no-repeat;
   background-size: cover;
 }
 
@@ -23,6 +24,7 @@ h1 {
   font-size: 120px;
   margin-right: auto;
   margin-top: 50;
+  text-shadow: 2px 2px  #080705;
 }
 
 
@@ -39,10 +41,12 @@ section {
 
 p {
   font-size: 30px;
+    text-shadow: 2px 2px  #080705;
 }
 
 #powerSave {
   font-size: 30px;
+  text-shadow: 2px 2px  #080705;
 }
 button {
   font-weight: 900;
@@ -83,4 +87,5 @@ button {
 
 .high-usage {
   color: rgb(255, 175, 173);
+
 }
