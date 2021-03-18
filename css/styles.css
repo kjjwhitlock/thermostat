@@ -7,6 +7,26 @@
   margin: 0px;
 }
 
+#city-temperature {
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center center;
+  text-align: center;
+  margin-top: auto;
+  margin-left: auto;
+}
+
+#current-city {
+  font-family: Helvetica;
+  color: whitesmoke;
+  font-weight: bold;
+  text-transform: uppercase;
+  border: 50px;
+  margin: 0px;
+}
+
 img {
   width: 100%;
   height: auto;
@@ -76,9 +96,7 @@ button {
   box-shadow: 5px 5px #080705;
   margin-bottom: 25px;
 }
-.city-temperature {
-  font-size: 10px;
-}
+
 
 
 .low-usage {
