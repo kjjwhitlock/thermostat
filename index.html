@@ -16,6 +16,17 @@
             power saving mode is <span id="powerSave"></span>
       </p>
     </section>
+    <section id="city-temperature">
+  <p>Current temperature: <span id="current-temperature"></span></p>
+  <select id="current-city">
+  <option value="london">London</option>
+  <option value="newyork">New York</option>
+  <option value="paris">Paris</option>
+  <option value="tokyo">Tokyo</option>
+</select>
+</section>
+
+</section>
     <script src="jquery-3.0.0.js"></script>
     <script>
       $(document).ready(function(){
@@ -57,6 +68,15 @@
         $("body").css('background-image', " url('css/img/jazzy_scene.jpg')");
       }
      }
+     $.get('http://api.openweathermap.org/data/2.5/weather?q=London&appid=a3d9eb01d4de82b9b8d0849ef604dbed&units=metric', function(data) {
+  $('#current-temperature').text(data.main.temp);
+  $('#current-city').change(function() {
+  var city = $('#current-city').val();
+  $.get('http://api.openweathermap.org/data/2.5/weather?q=' + city + '&appid=a3d9eb01d4de82b9b8d0849ef604dbed&units=metric', function(data) {
+    $('#current-temperature').text(data.main.temp)
+  })
+})
+})
      })
       </script>
       <script src='src/thermostat.js'></script>

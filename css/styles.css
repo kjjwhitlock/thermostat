@@ -76,6 +76,10 @@ button {
   box-shadow: 5px 5px #080705;
   margin-bottom: 25px;
 }
+.city-temperature {
+  font-size: 10px;
+}
+
 
 .low-usage {
   color: rgb(236, 249, 223);
